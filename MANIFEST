@@ -3,6 +3,7 @@ MANIFEST
 Makefile.PL
 README
 Random.pm
+Random.xs
 com.c
 example.pl
 helper.c
@@ -10,4 +11,3 @@ linpack.c
 randlib.c
 randlib.h
 test.pl
-wrapper.c

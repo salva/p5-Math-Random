@@ -17,6 +17,12 @@ Revision history for Perl extension Math::Random.
 	  and so on).
 	- Corrected one test in test.pl.
 
-0.63  Wed Sep  5 09:32:55 2001
-	- Changed internal variables in wrapper.c to the new names:
-	  na became PL_na; sv_yes, PL_sv_yes.
+0.63  Wed Sep  5 09:31:04 2001
+        - Modified Makefile.PL to see whether Perl is using sv_yes
+	  or PL_sv_yes and adjust things automatically.
+
+0.64  Thu Dec  6 13:26:03 2001
+	- Rebuilt using h2xs 1.18 and a vanilla .xs file rather than
+	  a SWIG wrapper file.  This is more Perlish and will get
+	  around a reported problem with 'na' and 'sv_yes' in the
+	  wrapper.c file.

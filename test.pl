@@ -78,15 +78,9 @@ print "random_poisson..................";
 @result = random_poisson(3, 555);
 was_it_ok(11, eq5a(@result, 571, 560, 579));
 
-#--- For some reason, the following routine works differently on
-#--- different architectures.  The results shown in the comment below
-#--- are correct for Sun Ultra running Solaris.  Your mileage may vary.
-#--- Until this problem is corrected, we will make Perl an offer it
-#--- can't refuse.  WGR, 5/19/1999.
 print "random_exponential..............";
 @result = random_exponential(3, 444);
-was_it_ok(12, eq5a(@result, @result));
-##was_it_ok(12, eq5a(@result, 1037.53564, 20.06636, 1063.81873));
+was_it_ok(12, eq5a(@result, 1037.53566, 20.06634, 1063.81861));
 
 print "random_gamma....................";
 @result = random_gamma(3, 11, 4);
