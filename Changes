@@ -6,3 +6,13 @@ Revision history for Perl extension Math::Random.
 	  Perl modules: added test.pl, Changes, MANIFEST, README;
 	  corrected some spelling, used "make dist", and so on.
 	- Geoffrey Rommel (grommel@sears.com)
+
+0.62  Wed Aug 22 09:30:14 2001
+	- In com.c and randlib.c, changed the Fortran-style labels
+	  and goto's in certain functions to proper {} blocks.  (For
+	  this I consulted the original L'Ecuyer/Cote paper.)
+	- Changed all floats to doubles.
+	- Increased the precision of many literals in accordance with
+	  the original papers (e.g. 1/M1 in ranf, log 4 in genbet,
+	  and so on).
+	- Corrected one test in test.pl.

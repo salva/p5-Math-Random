@@ -8,7 +8,7 @@ var_Random_init();
 
 use Carp;
 
-$VERSION = '0.61';
+$VERSION = '0.62';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -571,9 +571,8 @@ I<$n>.
 
 Argument  restrictions: I<$low> and I<$high>  are  first rounded using
 C<int()>; the resulting I<$low> must be less than or equal to I<$high>,
-and  the  resulting  range  I<($high>S< >I<->S< >I<$low)>  must not be
-and  the  resulting  range  I<($high - $low)>  must not be
-greater than 2147483561.
+and the resulting  range I<($high - $low)>  must not  be  greater than
+2147483561.
 
 There are no defaults; all three arguments must be provided.
 
@@ -992,7 +991,7 @@ Variate Generation.  New York: Springer-Verlag, 1986.
 
 =head1 VERSION
 
-This POD documents B<Math::Random> version 0.61.
+This POD documents B<Math::Random> version 0.62.
 
 =head1 AUTHORS
 
@@ -1027,7 +1026,7 @@ Our address is:
 
 =item *
 
-Geoffrey Rommel may be reached at grommel@sears.com.
+Geoffrey Rommel may be reached at grommel@cpan.org.
 
 =back
 
@@ -1068,6 +1067,9 @@ a fee and/or specific permission.
 
 Krogh, F.  "Algorithms Policy."  ACM  Tran.  Math.  Softw.  13 (1987),
 183-186.
+
+Note, however, that only the particular expression of an algorithm can
+be copyrighted, not the algorithm per se; see 17 USC 102.
 
 We place the Randlib code that we have written in the public domain.  
 

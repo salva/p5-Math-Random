@@ -32,7 +32,8 @@ ACM's Transactions on Mathematical Software.  The ACM has copyright on
 these routines (see the ACM statement on software policy in the POD/man
 page).  Commercial incorporation of these routines into products to be
 sold requires permission and perhaps payment to the ACM.  But if you
-don't plan to sell them, enjoy.
+don't plan to sell them, enjoy.  (Note, however, that algorithms per se
+cannot be copyrighted; see 17 USC 102(b).)
 
 
 How to Install

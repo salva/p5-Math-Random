@@ -1,7 +1,7 @@
 # Before `make install' is performed this script should be runnable with
 # `make test'. After `make install' it should work as `perl test.pl'
 
-######################### We start with some black magic to print on failure.
+################# We start with some black magic to print on failure.
 
 BEGIN { $| = 1; print "1..15\n"; }
 END {print "not ok 1\n" unless $loaded;}
@@ -9,7 +9,7 @@ use Math::Random qw(:all);
 $loaded = 1;
 print "ok 1\n";
 
-######################### End of black magic.
+################# End of black magic.
 
 #------ SUBROUTINES
 #--- Compare two 3-element arrays for equality to 5 decimal places.
@@ -39,8 +39,8 @@ $failed = 0;
 random_set_seed_from_phrase("En arkhe en ho Logos");
 
 print "random_uniform..................";
-@result = random_uniform(3, 333, 3333333);
-was_it_ok(2, eq5a(@result, 45236.10156, 1621981.75, 630723.4375));
+@result = random_uniform(3, 0, 1.5);
+was_it_ok(2, eq5a(@result, 0.02021, 0.72981, 0.28370));
 
 print "random_uniform_integer..........";
 @result = random_uniform_integer(3, 1, 999999);
@@ -100,9 +100,8 @@ print "random_negative_binomial........";
 @result = random_negative_binomial(3, 10, 0.63);
 was_it_ok(15, eq5a(@result, 7, 8, 2));
 
-
 if ($failed == 0) { print "All tests successful.\n" }
 else {
-   $ess = ($failed == 1) ? "" : "s";
-   print "$failed test$ess failed!  There is no joy in Mudville.\n";
+   $tt = ($failed == 1) ? "1 test" : "$failed tests";
+   print "$tt failed!  There is no joy in Mudville.\n";
 }

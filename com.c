@@ -146,7 +146,7 @@ void initgn(long isdtyp)
      void initgn(long isdtyp)
           INIT-ialize current G-e-N-erator
      Reinitializes the state of the current generator
-     This is a transcription from Pascal to Fortran of routine
+     This is a transcription from Pascal to C of routine
      Init_Generator from the paper
      L'Ecuyer, P. and Cote, S. "Implementing a Random Number Package
      with Splitting Facilities." ACM Transactions on Mathematical
@@ -158,6 +158,8 @@ void initgn(long isdtyp)
                           the current block
           isdtyp =  1  => sets the seeds to the first value of
                           the next block
+     WGR, 12/19/00: replaced S10, S20, etc. with C blocks {} per
+     original paper.
 **********************************************************************
 */
 {
@@ -171,35 +173,31 @@ static long qrgnin;
      Abort unless random number generator initialized
 */
     gsrgs(0L,&qrgnin);
-    if(qrgnin) goto S10;
+ if (! qrgnin) {
     fprintf(stderr,"%s\n",
       " INITGN called before random number generator  initialized -- abort!");
     exit(1);
-S10:
-    gscgn(0L,&g);
-    if(-1 != isdtyp) goto S20;
+ }
+
+ gscgn(0L,&g);
+ if(isdtyp == -1) {		/* Initial seed */
     *(Xlg1+g-1) = *(Xig1+g-1);
     *(Xlg2+g-1) = *(Xig2+g-1);
-    goto S50;
-S20:
-    if(0 != isdtyp) goto S30;
-    goto S50;
-S30:
-/*
-     do nothing
-*/
-    if(1 != isdtyp) goto S40;
+ }
+ else if (isdtyp == 0) { ; }	/* Last seed */
+ else if (isdtyp == 1) {	/* New seed */
     *(Xlg1+g-1) = mltmod(Xa1w,*(Xlg1+g-1),Xm1);
     *(Xlg2+g-1) = mltmod(Xa2w,*(Xlg2+g-1),Xm2);
-    goto S50;
-S40:
+ } else {
     fprintf(stderr,"%s\n","isdtyp not in range in INITGN");
     exit(1);
-S50:
-    *(Xcg1+g-1) = *(Xlg1+g-1);
-    *(Xcg2+g-1) = *(Xlg2+g-1);
+ }
+
+ *(Xcg1+g-1) = *(Xlg1+g-1);
+ *(Xcg2+g-1) = *(Xlg2+g-1);
 #undef numg
 }
+
 void inrgcm(void)
 /*
 **********************************************************************

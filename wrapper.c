@@ -371,26 +371,26 @@ void boot_Math__Random _((CV* cv));
 #else
 SWIGEXPORT(void,boot_Math__Random)(CPerl *, CV *cv);
 #endif
-extern float genbet(float ,float );
-extern float genchi(float );
-extern float genexp(float );
-extern float genf(float ,float );
-extern float gengam(float ,float );
-extern float gennch(float ,float );
-extern float gennf(float ,float ,float );
-extern float gennor(float ,float );
-extern float genunf(float ,float );
-extern long ignbin(long ,float );
-extern long ignnbn(long ,float );
-extern long ignpoi(float );
+extern double genbet(double ,double );
+extern double genchi(double );
+extern double genexp(double );
+extern double genf(double ,double );
+extern double gengam(double ,double );
+extern double gennch(double ,double );
+extern double gennf(double ,double ,double );
+extern double gennor(double ,double );
+extern double genunf(double ,double );
+extern long ignbin(long ,double );
+extern long ignnbn(long ,double );
+extern long ignpoi(double );
 extern long ignuin(long ,long );
 extern void setall(long ,long );
 extern void getsd(long *,long *);
 extern void phrtsd(char *,long *,long *);
 extern long gvpriw(long );
 extern int rspriw(long );
-extern float gvprfw(long );
-extern void svprfw(long ,float );
+extern double gvprfw(long );
+extern void svprfw(long ,double );
 extern int rsprfw(long );
 extern void pgnprm(long );
 extern void pgnmul(long ,long );
@@ -417,17 +417,17 @@ SWIGCLASS_STATIC int swig_magic_readonly(SV *sv, MAGIC *mg) {
 
 XS(_wrap_genbet) {
 
-    float  _result;
-    float  _arg0;
-    float  _arg1;
+    double  _result;
+    double  _arg0;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: genbet(aa,bb);");
-    _arg0 = (float ) SvNV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
-    _result = (float )genbet(_arg0,_arg1);
+    _arg0 = (double ) SvNV(ST(0));
+    _arg1 = (double ) SvNV(ST(1));
+    _result = (double )genbet(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -435,15 +435,15 @@ XS(_wrap_genbet) {
 
 XS(_wrap_genchi) {
 
-    float  _result;
-    float  _arg0;
+    double  _result;
+    double  _arg0;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 1) || (items > 1)) 
         croak("Usage: genchi(df);");
-    _arg0 = (float ) SvNV(ST(0));
-    _result = (float )genchi(_arg0);
+    _arg0 = (double ) SvNV(ST(0));
+    _result = (double )genchi(_arg0);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -451,15 +451,15 @@ XS(_wrap_genchi) {
 
 XS(_wrap_genexp) {
 
-    float  _result;
-    float  _arg0;
+    double  _result;
+    double  _arg0;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 1) || (items > 1)) 
         croak("Usage: genexp(av);");
-    _arg0 = (float ) SvNV(ST(0));
-    _result = (float )genexp(_arg0);
+    _arg0 = (double ) SvNV(ST(0));
+    _result = (double )genexp(_arg0);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -467,17 +467,17 @@ XS(_wrap_genexp) {
 
 XS(_wrap_genf) {
 
-    float  _result;
-    float  _arg0;
-    float  _arg1;
+    double  _result;
+    double  _arg0;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: genf(dfn,dfd);");
-    _arg0 = (float ) SvNV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
-    _result = (float )genf(_arg0,_arg1);
+    _arg0 = (double ) SvNV(ST(0));
+    _arg1 = (double ) SvNV(ST(1));
+    _result = (double )genf(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -485,17 +485,17 @@ XS(_wrap_genf) {
 
 XS(_wrap_gengam) {
 
-    float  _result;
-    float  _arg0;
-    float  _arg1;
+    double  _result;
+    double  _arg0;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: gengam(a,r);");
-    _arg0 = (float ) SvNV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
-    _result = (float )gengam(_arg0,_arg1);
+    _arg0 = (double ) SvNV(ST(0));
+    _arg1 = (double ) SvNV(ST(1));
+    _result = (double )gengam(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -503,17 +503,17 @@ XS(_wrap_gengam) {
 
 XS(_wrap_gennch) {
 
-    float  _result;
-    float  _arg0;
-    float  _arg1;
+    double  _result;
+    double  _arg0;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: gennch(df,xnonc);");
-    _arg0 = (float ) SvNV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
-    _result = (float )gennch(_arg0,_arg1);
+    _arg0 = (double ) SvNV(ST(0));
+    _arg1 = (double ) SvNV(ST(1));
+    _result = (double )gennch(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -521,19 +521,19 @@ XS(_wrap_gennch) {
 
 XS(_wrap_gennf) {
 
-    float  _result;
-    float  _arg0;
-    float  _arg1;
-    float  _arg2;
+    double  _result;
+    double  _arg0;
+    double  _arg1;
+    double  _arg2;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 3) || (items > 3)) 
         croak("Usage: gennf(dfn,dfd,xnonc);");
-    _arg0 = (float ) SvNV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
-    _arg2 = (float ) SvNV(ST(2));
-    _result = (float )gennf(_arg0,_arg1,_arg2);
+    _arg0 = (double ) SvNV(ST(0));
+    _arg1 = (double ) SvNV(ST(1));
+    _arg2 = (double ) SvNV(ST(2));
+    _result = (double )gennf(_arg0,_arg1,_arg2);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -541,17 +541,17 @@ XS(_wrap_gennf) {
 
 XS(_wrap_gennor) {
 
-    float  _result;
-    float  _arg0;
-    float  _arg1;
+    double  _result;
+    double  _arg0;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: gennor(av,sd);");
-    _arg0 = (float ) SvNV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
-    _result = (float )gennor(_arg0,_arg1);
+    _arg0 = (double ) SvNV(ST(0));
+    _arg1 = (double ) SvNV(ST(1));
+    _result = (double )gennor(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -559,17 +559,17 @@ XS(_wrap_gennor) {
 
 XS(_wrap_genunf) {
 
-    float  _result;
-    float  _arg0;
-    float  _arg1;
+    double  _result;
+    double  _arg0;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: genunf(low,high);");
-    _arg0 = (float ) SvNV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
-    _result = (float )genunf(_arg0,_arg1);
+    _arg0 = (double ) SvNV(ST(0));
+    _arg1 = (double ) SvNV(ST(1));
+    _result = (double )genunf(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -579,14 +579,14 @@ XS(_wrap_ignbin) {
 
     long  _result;
     long  _arg0;
-    float  _arg1;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: ignbin(n,pp);");
     _arg0 = (long )SvIV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
+    _arg1 = (double ) SvNV(ST(1));
     _result = (long )ignbin(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setiv(ST(argvi++),(IV) _result);
@@ -597,14 +597,14 @@ XS(_wrap_ignnbn) {
 
     long  _result;
     long  _arg0;
-    float  _arg1;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: ignnbn(n,p);");
     _arg0 = (long )SvIV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
+    _arg1 = (double ) SvNV(ST(1));
     _result = (long )ignnbn(_arg0,_arg1);
     ST(argvi) = sv_newmortal();
     sv_setiv(ST(argvi++),(IV) _result);
@@ -614,13 +614,13 @@ XS(_wrap_ignnbn) {
 XS(_wrap_ignpoi) {
 
     long  _result;
-    float  _arg0;
+    double  _arg0;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 1) || (items > 1)) 
         croak("Usage: ignpoi(mu);");
-    _arg0 = (float ) SvNV(ST(0));
+    _arg0 = (double ) SvNV(ST(0));
     _result = (long )ignpoi(_arg0);
     ST(argvi) = sv_newmortal();
     sv_setiv(ST(argvi++),(IV) _result);
@@ -766,7 +766,7 @@ XS(_wrap_rspriw) {
 
 XS(_wrap_gvprfw) {
 
-    float  _result;
+    double  _result;
     long  _arg0;
 
     int argvi = 0;
@@ -774,7 +774,7 @@ XS(_wrap_gvprfw) {
     if ((items < 1) || (items > 1)) 
         croak("Usage: gvprfw(index);");
     _arg0 = (long )SvIV(ST(0));
-    _result = (float )gvprfw(_arg0);
+    _result = (double )gvprfw(_arg0);
     ST(argvi) = sv_newmortal();
     sv_setnv(ST(argvi++), (double) _result);
     XSRETURN(argvi);
@@ -783,14 +783,14 @@ XS(_wrap_gvprfw) {
 XS(_wrap_svprfw) {
 
     long  _arg0;
-    float  _arg1;
+    double  _arg1;
 
     int argvi = 0;
     dXSARGS;
     if ((items < 2) || (items > 2)) 
         croak("Usage: svprfw(index,value);");
     _arg0 = (long )SvIV(ST(0));
-    _arg1 = (float ) SvNV(ST(1));
+    _arg1 = (double ) SvNV(ST(1));
     svprfw(_arg0,_arg1);
     XSRETURN(argvi);
 }

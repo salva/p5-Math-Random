@@ -7,9 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static long  *iwork = NULL; /* perl long array, alloc. in 'rspriw'  */
-static float *fwork = NULL; /* perl float array, alloc. in 'rsprfw' */
-static float *parm  = NULL; /* maintained by 'psetmn' for 'pgenmn'  */
+static long   *iwork = NULL; /* perl long array, alloc. in 'rspriw'  */
+static double *fwork = NULL; /* perl float array, alloc. in 'rsprfw' */
+static double *parm  = NULL; /* maintained by 'psetmn' for 'pgenmn'  */
 
 /****************************************************************************
                 Perl <-> C (Long) Integer Helper Functions
@@ -52,16 +52,16 @@ int rspriw(long size) {
  (these pass single values back and forth, to load/read/manage working array)
  ****************************************************************************/
 
-float gvprfw(long index) {
+double gvprfw(long index) {
   /* Gets the Value at index of the PeRl Float Working array */
-  extern float *fwork;
+  extern double *fwork;
   
   return *(fwork + index);
 }
 
-void svprfw(long index, float value) {
+void svprfw(long index, double value) {
   /* Sets Value in PeRl's Float Working array */
-  extern float *fwork;
+  extern double *fwork;
 
   *(fwork + index) = value;
 }
@@ -72,13 +72,13 @@ int rsprfw(long size) {
    * 1 if successful
    * 0 if out of memory
    */
-  extern float *fwork;
+  extern double *fwork;
   static long sfwork = 0L;
 
   if (size <= sfwork) return 1;
   /* else reset array */
   if (fwork != NULL) free(fwork);
-  fwork = (float *) malloc(sizeof(float) * size);
+  fwork = (double*) malloc(sizeof(double) * size);
   if (fwork != NULL) {
     sfwork = size;
     return 1;
@@ -119,12 +119,12 @@ void pgnprm(long n) {
 
 void pgnmul (long n, long ncat) {
   /* Perl's GeNerate MULtinomial observation.
-   * Method: uses void genmul(long n,float *p,long ncat,long *ix) in 'randlib.c'
+   * Method: uses void genmul(long n,double *p,long ncat,long *ix) in 'randlib.c'
    * Arguments:
    * n    - number of events to be classified.
    * ncat - number of categories into which the events are classified.
    * Notes:
-   * *p - must be set up first in perl's float working array *fwork.
+   * *p - must be set up first in perl's double working array *fwork.
    *      must have at least ncat-1 categories and otherwise make sense.
    * *ix - (results) will be perl's (long) integer working array *iwork.
    */
@@ -132,8 +132,8 @@ void pgnmul (long n, long ncat) {
   /* NOTE: FROM PERL, FWORK MUST HAVE SIZE CHECKED AND BE FILLED */
   /* ALSO, HERE OR IN PERL IWORK MUST HAVE SIZE CHECKED */
 
-  extern long  *iwork;
-  extern float *fwork;
+  extern long   *iwork;
+  extern double *fwork;
 
   /* since all is OK so far, get the obs */
   genmul(n, fwork, ncat, iwork);
@@ -172,19 +172,19 @@ int psetmn(long p) {
    *
    * Method:
    * Calls 'setgmn' in "randlib.c":
-   * void setgmn(float *meanv,float *covm,long p,float *parm)
+   * void setgmn(double *meanv,double *covm,long p,double *parm)
    */
   
-  extern float *fwork, *parm;
+  extern double *fwork, *parm;
   static long oldp = 0L; /* p from last reallocate of parm */
 
   if (p > oldp) { /* pmn_param is too small; reallocate */
     if (parm != NULL) free(parm);
-    parm = (float *) malloc(sizeof(float)*(p*(p+3L)/2L + 1L));
+    parm = (double *) malloc(sizeof(double)*(p*(p+3L)/2L + 1L));
     if (parm == NULL) {
       fputs("Out of memory in PSETMN - ABORT",stderr);
       fprintf(stderr,
-	      "P = %ld; Requested # of floats %ld\n",p,p*(p+3L)/2L + 1L);
+	      "P = %ld; Requested # of doubles %ld\n",p,p*(p+3L)/2L + 1L);
       oldp = 0L;
       return 0;
     } else {
@@ -217,10 +217,10 @@ int pgenmn(void) {
    *
    * Method:
    * Calls 'genmn' in "randlib.c":
-   * void genmn(float *parm,float *x,float *work)
+   * void genmn(double *parm,double *x,double *work)
    */
   
-  extern float *fwork, *parm;
+  extern double *fwork, *parm;
 
   /* NOTE: CHECK OF PARM ONLY NEEDED IF PERL SET/GENERATE IS SPLIT */
 
