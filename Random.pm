@@ -8,7 +8,7 @@ var_Random_init();
 
 use Carp;
 
-$VERSION = '0.62';
+$VERSION = '0.63';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -991,7 +991,7 @@ Variate Generation.  New York: Springer-Verlag, 1986.
 
 =head1 VERSION
 
-This POD documents B<Math::Random> version 0.62.
+This POD documents B<Math::Random> version 0.63.
 
 =head1 AUTHORS
 

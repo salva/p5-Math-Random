@@ -705,7 +705,7 @@ XS(_wrap_phrtsd) {
     dXSARGS;
     if ((items < 3) || (items > 3)) 
         croak("Usage: phrtsd(phrase,OutSeed,OutSeed);");
-    _arg0 = (char *) SvPV(ST(0),na);
+    _arg0 = (char *) SvPV(ST(0),PL_na);
 {
   /* makes interface ignore seed argument input values */
   static long junk;
@@ -877,7 +877,7 @@ XS(_wrap_salfph) {
     dXSARGS;
     if ((items < 1) || (items > 1)) 
         croak("Usage: salfph(phrase);");
-    _arg0 = (char *) SvPV(ST(0),na);
+    _arg0 = (char *) SvPV(ST(0),PL_na);
     salfph(_arg0);
     XSRETURN(argvi);
 }
@@ -935,6 +935,6 @@ XS(boot_Math__Random) {
 	 SWIG_RegisterMapping("int","signed int",0);
 	 SWIG_RegisterMapping("unsigned int","int",0);
 	 SWIG_RegisterMapping("signed long","long",0);
-	 ST(0) = &sv_yes;
+	 ST(0) = &PL_sv_yes;
 	 XSRETURN(1);
 }

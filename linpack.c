@@ -1,8 +1,8 @@
 #include <math.h>
-float sdot(long n,float *sx,long incx,float *sy,long incy)
+double sdot(long n,double *sx,long incx,double *sy,long incy)
 {
 static long i,ix,iy,m,mp1;
-static float sdot,stemp;
+static double sdot,stemp;
     stemp = sdot = 0.0;
     if(n <= 0) return sdot;
     if(incx == 1 && incy == 1) goto S20;
@@ -29,7 +29,7 @@ S60:
     sdot = stemp;
     return sdot;
 }
-void spofa(float *a,long lda,long n,long *info)
+void spofa(double *a,long lda,long n,long *info)
 /*
      SPOFA FACTORS A REAL SYMMETRIC POSITIVE DEFINITE MATRIX.
      SPOFA IS USUALLY CALLED BY SPOCO, BUT IT CAN BE CALLED
@@ -60,9 +60,9 @@ void spofa(float *a,long lda,long n,long *info)
      INTERNAL VARIABLES
 */
 {
-extern float sdot(long n,float *sx,long incx,float *sy,long incy);
+extern double sdot(long n,double *sx,long incx,double *sy,long incy);
 static long j,jm1,k;
-static float t,s;
+static double t,s;
 /*
      BEGIN BLOCK WITH ...EXITS TO 40
 */

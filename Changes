@@ -16,3 +16,7 @@ Revision history for Perl extension Math::Random.
 	  the original papers (e.g. 1/M1 in ranf, log 4 in genbet,
 	  and so on).
 	- Corrected one test in test.pl.
+
+0.63  Wed Sep  5 09:32:55 2001
+	- Changed internal variables in wrapper.c to the new names:
+	  na became PL_na; sv_yes, PL_sv_yes.
