@@ -1,0 +1,24 @@
+This a MPW MrC (PPC) binary build of Math-Random-0.66 for Macperl 5.6.1. 
+Passed all tests. If you encounter a problem and/or bugs feel free to contact me.
+
+
+Caveats 
+-------
+
+This package contains shared libraries, which are loaded dynamically by MacPerl 
+well, normally. Currently, dynamic loading of shared libs may *not* work with the MPW MacPerl tool. However, dynamic loading reliably works with the MacPerl application. Note also that dynamic loading is NOT supported by the 68K versions of the MacPerl application and tool. And finally, note that this module will *not* work with the older MacPerl 5.2.0r4.
+
+This module also will *not* work with MacPerl 5.8.0
+
+
+You can download the Math-Random-0.66-binMac56 tarball via my website at
+
+    http://homepage.mac.com/c_clark/
+    
+or from my CPAN directory
+
+    $CPAN/authors/id/C/CC/CCLARK/
+    
+--
+Chad A. Clark
+c_clark@mac.com
