@@ -9,7 +9,7 @@ require DynaLoader;
 require AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
-$VERSION = '0.65';
+$VERSION = '0.66';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -150,8 +150,8 @@ sub random_multivariate_normal { # Arguments: ($n, @mean, @covar(2-dim'l))
     # check outline of arguments
     croak("Sizes of \@mean and \@covar don't match\nin ".
 	  "random_multivariate_normal(\$n, \@mean, \@covar(2-dim'l))")
-	unless (($p == int($p)) and ($_[$p - 1] !~ /^ARRAY/) and
-		($_[$p] =~ /^ARRAY/));
+	unless (($p == int($p)) and ("$_[$p - 1]" !~ /^ARRAY/) and
+		("$_[$p]" =~ /^ARRAY/));
     
     # linearize input - it seems faster to push
     my @linear = ();
@@ -1020,7 +1020,7 @@ Variate Generation.  New York: Springer-Verlag, 1986.
 
 =head1 VERSION
 
-This POD documents B<Math::Random> version 0.65.
+This POD documents B<Math::Random> version 0.66.
 
 =head1 AUTHORS
 

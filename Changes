@@ -31,3 +31,10 @@ Revision history for Perl extension Math::Random.
 	- Add helper.h so that XS recognizes the return value of
 	  gvprfw().  Thanks to Stephan Heuel <heuel@ipb.uni-bonn.de>
 	  for noticing and correcting this problem.
+
+0.66  Fri Jun  7 12:17:36 2002
+	- The test for random_multivariate_normal displayed an odd
+	  error message on some systems but not others.  This has
+	  been corrected.  The problem was noted by the CPAN-testers,
+	  Maynard Brandsma <BrandsmaMG@compuserve.com>, and Nat
+	  Goodman <natg@shore.net>.
