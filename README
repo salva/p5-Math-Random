@@ -1,0 +1,51 @@
+Wednesday, February 10, 1999
+
+This is the Math::Random module with shared libraries compiled for 
+MacPerl.  Shared libraries run only on PPC and CFM68K versions, not 
+non-CFM 68K versions.
+
+Installing the files in "blib:lib" -
+
+Installing into your site_perl directory is best, as opposed to mucking up 
+{MACPERL}lib -
+
+    {MACPERL}site_perl:Math:Random.pm
+    {MACPERL}site_perl:MacCFM68K:auto:Math:Random:Random
+    {MACPERL}site_perl:MacPPC:auto:Math:Random:Random
+
+This distribution was packed with Chris Nandor's 'targzipme' script. I 
+highly recommend using, at the very least, the 'untargzipme' script to do 
+the reverse. If you are downloading with a browser, and your prefs are set 
+to launch Stuffit Expander on a .tar.gz file, be advised that the two 
+shared libraries should also be dropped on Stuffit Expander manually, 
+after the main distribution is unpacked, because they are encoded.
+
+Testing -
+
+The file "example.pl" is original. It's more of a demo, but serves as a 
+useful test, obviously. I also included another file, "defaults.t" in 
+directory "t", which tests the default exports.
+
+This distribution was prepared for Perl (not by me) with the assistance of
+SWIG, the Simplified Interface Wrapper Generator.  If you're interested in 
+details of what SWIG-generated code looks like, examine "wrapper.c".
+
+Special Notes:
+
+(1) I needed to build a new CFM MathLib in order to get the CFM library to 
+link.  In a nutshell, I implemented a MathLibCFM68K with far data.  I have 
+no reason to believe that this won't work; OTOH, I can't test it.  If 
+you're a CFM type, and you've tested this build, please let me know.  
+Thanks.
+
+(2) Also, for the edification of XS enthusiasts, it was necessary to place 
+the math library before PerlStub (the Perl library) in the link order, in 
+order to ensure that the shared library would import math functions such as 
+pow() and sqrt() from the math library, and not the builtins from Perl. The 
+problem was identified using the DumpPEF tool in MPW. If you're building 
+XS, and your libraries compile and link, but don't load, check your 
+imports.
+
+--
+
+Arved Sandstrom          mailto:Arved_37@chebucto.ns.ca
