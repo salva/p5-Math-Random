@@ -22,7 +22,7 @@ float genbet(float aa,float bb)
        
                               Method
      R. C. H. Cheng
-     Generating Beta Variatew with Nonintegral Shape Parameters
+     Generating Beta Variates with Nonintegral Shape Parameters
      Communications of the ACM, 21:317-322  (1978)
      (Algorithms BB and BC)
 **********************************************************************
@@ -1534,7 +1534,7 @@ static char table[] =
 "abcdefghijklmnopqrstuvwxyz\
 ABCDEFGHIJKLMNOPQRSTUVWXYZ\
 0123456789\
-!@#$%^&*()_+[];:'\\\"<>?,./";
+!@#$%^&*()_+[];:'\\\"<>?,./ ";  /* WGR added space, 5/19/1999 */
 
 long ix;
 

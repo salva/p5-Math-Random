@@ -256,7 +256,7 @@ void salfph(char* phrase)
 
                               Method
      Calls 'setall' (from com.c) with the results of 'phrtsd' (here in
-     randlib.c).  Please see those funtions' comments for details.
+     randlib.c).  Please see those functions' comments for details.
 **********************************************************************
 */
 extern void phrtsd(char* phrase,long *seed1,long *seed2);

@@ -4,7 +4,6 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'		=> 'Math::Random',
     'VERSION_FROM'	=> 'Random.pm',
-    'DISTNAME'		=> 'Random',
     'OBJECT'		=> '$(O_FILES)',
     'LIBS'		=> ['-lm'],   # e.g., '-lm' 
     'DEFINE'		=> '',     # e.g., '-DHAVE_SOMETHING' 

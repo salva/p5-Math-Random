@@ -43,7 +43,7 @@ my @result = ();
      random_set_seed_from_phrase($phrase);
 
      if ($ans == 1) {
-	 print "Enter (space-seperated) N, DF for chi-square deviates:\n";
+	 print "Enter (space-separated) N, DF for chi-square deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
 	 @args = split(/\s+/,$input);
@@ -55,7 +55,7 @@ my @result = ();
      }
 
      if ($ans == 2) {
-	 print "Enter (space-seperated) N, DF, NONC for ",
+	 print "Enter (space-separated) N, DF, NONC for ",
 	 "noncentral chi-square deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -68,7 +68,7 @@ my @result = ();
      }
 
      if ($ans == 3) {
-	 print "Enter (space-seperated) N, DFN, DFD for F deviates:\n";
+	 print "Enter (space-separated) N, DFN, DFD for F deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
 	 @args = split(/\s+/,$input);
@@ -80,7 +80,7 @@ my @result = ();
      }
 
      if ($ans == 4) {
-	 print "Enter (space-seperated) N, DFN, DFD, NONC for ",
+	 print "Enter (space-separated) N, DFN, DFD, NONC for ",
 	 "non-central F deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -93,17 +93,17 @@ my @result = ();
      }
 
      if ($ans == 5) {
-	 print "Enter (space-seperated) list for random permutation:\n";
+	 print "Enter (space-separated) list for random permutation:\n";
 	 $input = <stdin>;
 	 chomp $input;
 	 @args = split(/\s+/,$input);
-	 print "Result (' : ' seperated):\n",
+	 print "Result (' : ' separated):\n",
 	 join(" : ", random_permutation(@args)),"\n";
 	 next TEST;
      }
 	 
      if ($ans == 6) {
-	 print "Enter (space-seperated) Maximum integer, Replications ",
+	 print "Enter (space-separated) Maximum integer, Replications ",
 	 "per integer:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -113,12 +113,12 @@ my @result = ();
 	 my $val = 0;
 	 foreach $val (@result) { $totals[$val]++; }
 	 shift @totals;
-	 print "Result (' : ' seperated):\n",join(" : ", @totals),"\n";
+	 print "Result (' : ' separated):\n",join(" : ", @totals),"\n";
 	 next TEST;
      }
 	 
      if ($ans == 7) {
-	 print "Enter (space-seperated) N, LOWER, UPPER for ",
+	 print "Enter (space-separated) N, LOWER, UPPER for ",
 	 "uniform real deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -133,7 +133,7 @@ my @result = ();
      }
 
      if ($ans == 8) {
-	 print "Enter (space-seperated) N, A, B for ",
+	 print "Enter (space-separated) N, A, B for ",
 	 "beta deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -146,7 +146,7 @@ my @result = ();
      }
 
      if ($ans == 9) {
-	 print "Enter (space-seperated) N, NTrials, P for ",
+	 print "Enter (space-separated) N, NTrials, P for ",
 	 "binomial outcomes:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -159,7 +159,7 @@ my @result = ();
      }
 
      if ($ans == 10) {
-	 print "Enter (space-seperated) N, MU for ",
+	 print "Enter (space-separated) N, MU for ",
 	 "poisson outcomes:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -172,7 +172,7 @@ my @result = ();
      }
 
      if ($ans == 11) {
-	 print "Enter (space-seperated) N, AV for ",
+	 print "Enter (space-separated) N, AV for ",
 	 "exponential deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -186,7 +186,7 @@ my @result = ();
      }
 
      if ($ans == 12) {
-	 print "Enter (space-seperated) N, A, R for ",
+	 print "Enter (space-separated) N, A, R for ",
 	 "gamma deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -199,7 +199,7 @@ my @result = ();
      }
      
      if ($ans == 13) {
-	 print "Enter (space-seperated) list of prob.s for categories ",
+	 print "Enter (space-separated) list of prob.s for categories ",
 	 "for multinomial outcomes:\n";
 	 my $input = <stdin>;
 	 chomp $input;
@@ -223,7 +223,7 @@ my @result = ();
      }
 	 
      if ($ans == 14) {
-	 print "Enter (space-seperated) N, AV, SD for ",
+	 print "Enter (space-separated) N, AV, SD for ",
 	 "normal deviates:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -238,7 +238,7 @@ my @result = ();
      }
 	 
      if ($ans == 15) {
-	 print "Enter (space-seperated) N, NEvents, P for ",
+	 print "Enter (space-separated) N, NEvents, P for ",
 	 "negative binomial outcomes:\n";
 	 $input = <stdin>;
 	 chomp $input;
@@ -254,14 +254,14 @@ my @result = ();
 	 print "Enter dimension of multivariate deviate:\n";
 	 my $p = <stdin>;
 	 chomp $p;
-	 print "Enter mean vector of length $p (space seperated):\n";
+	 print "Enter mean vector of length $p (space separated):\n";
 	 my $temp = <stdin>;
 	 chomp $temp;
 	 $temp =~ s/^\s*//;
 	 my @mean;
 	 @mean = split(/\s+/,$temp);
 	 print "Enter (symmetric, $p by $p) covariance matrix\n",
-	 "One space-seperated row per line:\n";
+	 "One space-separated row per line:\n";
 	 my $val;
 	 my @covariance = (0) x $p;
 	 foreach $val (@covariance) {
@@ -285,7 +285,7 @@ my @result = ();
 	 print "Enter N (size of array) for random permuted index:\n";
 	 $input = <stdin>;
 	 chomp $input;
-	 print "Result (' : ' seperated):\n",
+	 print "Result (' : ' separated):\n",
 	 join(" : ", random_permuted_index($input)),"\n";
 	 next TEST;
      }

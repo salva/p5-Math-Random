@@ -1,51 +1,69 @@
-Wednesday, February 10, 1999
+Math::Random -- Random number generators
 
-This is the Math::Random module with shared libraries compiled for 
-MacPerl.  Shared libraries run only on PPC and CFM68K versions, not 
-non-CFM 68K versions.
+This module generates a variety of random numbers.  Capabilities
+of wide interest include the generation of:
+    uniform numbers between 0 and 1 (or user chosen boundaries)
+    random integers between user specified bounds
+    random permutations of a list (shuffle a deck of cards)
 
-Installing the files in "blib:lib" -
+The starting value for the random number generators can be specified
+as a phrase.  The user's name would make the value easy to remember.
+Of course, the Perl time function can be used to provide a
+pseudo-random starting value.
 
-Installing into your site_perl directory is best, as opposed to mucking up 
-{MACPERL}lib -
+Also included in the package are generators for a large number of
+distributions known primarily to statisticians.  These include the
+normal, exponential, binomial, beta, gamma, t, F, and others.
 
-    {MACPERL}site_perl:Math:Random.pm
-    {MACPERL}site_perl:MacCFM68K:auto:Math:Random:Random
-    {MACPERL}site_perl:MacPPC:auto:Math:Random:Random
+THE GOOD NEWS.  The generators are taken from published sources, are
+of high quality, and are largely machine independent.  We say "largely"
+because different machines handle floating point somewhat differently,
+so values may differ slightly.  The integer calculations (random
+integers and permutations) should be the same from machine to machine.
 
-This distribution was packed with Chris Nandor's 'targzipme' script. I 
-highly recommend using, at the very least, the 'untargzipme' script to do 
-the reverse. If you are downloading with a browser, and your prefs are set 
-to launch Stuffit Expander on a .tar.gz file, be advised that the two 
-shared libraries should also be dropped on Stuffit Expander manually, 
-after the main distribution is unpacked, because they are encoded.
+Devotees of Donald Knuth will be reassured to know that many of the
+algorithms used here are mentioned favorably in his treatment of
+random numbers.  See The Art of Computer Programming, vol. 2 (Semi-
+numerical Algorithms), 3rd edition (Reading, Mass.: Addison-Wesley,
+1997), pp. 106-108 (Table 1, line 21), 129-137, 145.
 
-Testing -
+THE BAD NEWS.  We adapted or modified many routines published in the
+ACM's Transactions on Mathematical Software.  The ACM has copyright on
+these routines, or at least on the original code (see the ACM
+statement on software policy in the POD/man page).  Commercial
+incorporation of these routines into products to be sold requires
+permission and perhaps payment to the ACM.  But if you don't plan to
+sell them, enjoy.
 
-The file "example.pl" is original. It's more of a demo, but serves as a 
-useful test, obviously. I also included another file, "defaults.t" in 
-directory "t", which tests the default exports.
 
-This distribution was prepared for Perl (not by me) with the assistance of
-SWIG, the Simplified Interface Wrapper Generator.  If you're interested in 
-details of what SWIG-generated code looks like, examine "wrapper.c".
+How to Install
+==============
 
-Special Notes:
+The usual:
 
-(1) I needed to build a new CFM MathLib in order to get the CFM library to 
-link.  In a nutshell, I implemented a MathLibCFM68K with far data.  I have 
-no reason to believe that this won't work; OTOH, I can't test it.  If 
-you're a CFM type, and you've tested this build, please let me know.  
-Thanks.
+  perl Makefile.PL
+  make
+  make test
+  make install
 
-(2) Also, for the edification of XS enthusiasts, it was necessary to place 
-the math library before PerlStub (the Perl library) in the link order, in 
-order to ensure that the shared library would import math functions such as 
-pow() and sqrt() from the math library, and not the builtins from Perl. The 
-problem was identified using the DumpPEF tool in MPW. If you're building 
-XS, and your libraries compile and link, but don't load, check your 
-imports.
 
---
+Who Deserves the Credit?  And Who Deserves the Blame?
+=====================================================
 
-Arved Sandstrom          mailto:Arved_37@chebucto.ns.ca
+Math::Random was put together by John Venier and Barry W. Brown
+with help from SWIG.  For version 0.61, Geoffrey Rommel made various
+cosmetic changes.
+
+Correspondence regarding Math::Random or randlib should be
+addressed to John Venier by email to
+
+		      venier@odin.mdacc.tmc.edu
+
+Our address is:
+
+		Department of Biomathematics, Box 237
+	 The University of Texas, M.D. Anderson Cancer Center
+		       1515 Holcombe Boulevard
+			  Houston, TX 77030
+
+June 1999
