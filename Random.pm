@@ -9,7 +9,7 @@ require DynaLoader;
 require AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
-$VERSION = '0.66';
+$VERSION = '0.67';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -378,13 +378,11 @@ sub random_binomial { # Arguments: ($n,$nt,$p)
 sub random_seed_from_phrase { # Argument $phrase
     my $phrase = shift(@_);
     $phrase ||= "";
-    my $junk;
-    return phrtsd($phrase,$junk,$junk);
+    return phrtsd($phrase);
 }
 
 sub random_get_seed { # no argument
-    my $junk;
-    return getsd($junk,$junk);
+    return getsd();
 }
 
 sub random_set_seed_from_phrase { # Argument $phrase

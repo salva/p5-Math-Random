@@ -38,3 +38,7 @@ Revision history for Perl extension Math::Random.
 	  been corrected.  The problem was noted by the CPAN-testers,
 	  Maynard Brandsma <BrandsmaMG@compuserve.com>, and Nat
 	  Goodman <natg@shore.net>.
+
+0.67  Fri Mar 14 13:57:16 2003
+	- Corrected an interface error in getsd and phrtsd.  Noted by
+	  Eric Moore <emoore@cofs.net>.

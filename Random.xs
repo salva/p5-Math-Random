@@ -166,12 +166,10 @@ ignbin (n,pp)
 	double  pp
 
 void
-phrtsd (phrase,seed1,seed2)
-	PROTOTYPE: $$$
+phrtsd (phrase)
+	PROTOTYPE: $
 	INPUT:
 	char *  phrase
-	void *  seed1
-	void *  seed2
 	PREINIT:
 	long  newseed1;
 	long  newseed2;
@@ -182,11 +180,8 @@ phrtsd (phrase,seed1,seed2)
 	PUSHs(sv_2mortal(newSViv(newseed2)));
 
 void
-getsd (iseed1,iseed2)
-	PROTOTYPE: $$
-	INPUT:
-	void *  iseed1
-	void *  iseed2
+getsd ()
+	PROTOTYPE:
 	PREINIT:
 	long  newseed1;
 	long  newseed2;
