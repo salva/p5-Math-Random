@@ -7,6 +7,7 @@ Random.xs
 com.c
 example.pl
 helper.c
+helper.h
 linpack.c
 randlib.c
 randlib.h

@@ -26,3 +26,8 @@ Revision history for Perl extension Math::Random.
 	  a SWIG wrapper file.  This is more Perlish and will get
 	  around a reported problem with 'na' and 'sv_yes' in the
 	  wrapper.c file.
+
+0.65  Wed May  1 08:55:30 2002
+	- Add helper.h so that XS recognizes the return value of
+	  gvprfw().  Thanks to Stephan Heuel <heuel@ipb.uni-bonn.de>
+	  for noticing and correcting this problem.

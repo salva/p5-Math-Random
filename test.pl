@@ -3,7 +3,7 @@
 
 ################# We start with some black magic to print on failure.
 
-BEGIN { $| = 1; print "1..15\n"; }
+BEGIN { $| = 1; print "1..16\n"; }
 END {print "not ok 1\n" unless $loaded;}
 use Math::Random qw(:all);
 $loaded = 1;
@@ -93,6 +93,14 @@ was_it_ok(14, eq5a(@result, 0, 2, 1));
 print "random_negative_binomial........";
 @result = random_negative_binomial(3, 10, 0.63);
 was_it_ok(15, eq5a(@result, 7, 8, 2));
+
+print "random_multivariate_normal......";
+@result = random_multivariate_normal(2,1,1,
+				    [0.1,0.0],
+				    [0.0,0.1]);
+@result = (map { @$_ } @result);
+was_it_ok(16,eq5a(@result[0..2],0.61592,0.016556,1.27741));
+
 
 if ($failed == 0) { print "All tests successful.\n" }
 else {

@@ -9,6 +9,7 @@ extern "C" {
 #endif
 
 #include "randlib.h"
+#include "helper.h"
 
 static int
 not_here(s)

@@ -9,7 +9,7 @@ require DynaLoader;
 require AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
-$VERSION = '0.64';
+$VERSION = '0.65';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -1020,7 +1020,7 @@ Variate Generation.  New York: Springer-Verlag, 1986.
 
 =head1 VERSION
 
-This POD documents B<Math::Random> version 0.64.
+This POD documents B<Math::Random> version 0.65.
 
 =head1 AUTHORS
 
@@ -1035,7 +1035,7 @@ plain vanilla XS rather than SWIG.
 
 =item *
 
-B<randlib> was compiled and written  by: Barry W. Brown, James Lovato,
+B<randlib> was compiled and written  by  Barry W. Brown, James Lovato,
 Kathy Russell, and John Venier.
 
 =item *
@@ -1071,11 +1071,6 @@ in    the B<C> code F<helper.c>, as    well as  the documentation, are
 copyright by John  Venier and  Barry  W.  Brown for the  University of
 Texas M.  D.  Anderson Cancer Center in 1997.  They may be distributed
 and used under the same conditions as B<Perl>.
-
-=item *
-
-The code in F<wrapper.c> is lightly modified from the output of B<SWIG>.
-See L<"CODE MANIPULATION">.
 
 =item *
 

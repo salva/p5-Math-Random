@@ -6,6 +6,7 @@
 #include "randlib.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "helper.h"
 
 static long   *iwork = NULL; /* perl long array, alloc. in 'rspriw'  */
 static double *fwork = NULL; /* perl float array, alloc. in 'rsprfw' */
