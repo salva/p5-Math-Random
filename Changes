@@ -1,6 +1,6 @@
 Revision history for Perl extension Math::Random.
 
-0.61  Tue Jun  8 07:50:07 1999
+0.61  Wed May 19 07:55:53 1999
 	- Added a space to the translation table in phrtsd.
 	- Cosmetic changes to bring this module into line with other
 	  Perl modules: added test.pl, Changes, MANIFEST, README;

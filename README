@@ -25,15 +25,14 @@ Devotees of Donald Knuth will be reassured to know that many of the
 algorithms used here are mentioned favorably in his treatment of
 random numbers.  See The Art of Computer Programming, vol. 2 (Semi-
 numerical Algorithms), 3rd edition (Reading, Mass.: Addison-Wesley,
-1997), pp. 106-108 (Table 1, line 21), 129-137, 145.
+1997), pp. 106-108 (Table 1, line 21), 129-137.
 
 THE BAD NEWS.  We adapted or modified many routines published in the
 ACM's Transactions on Mathematical Software.  The ACM has copyright on
-these routines, or at least on the original code (see the ACM
-statement on software policy in the POD/man page).  Commercial
-incorporation of these routines into products to be sold requires
-permission and perhaps payment to the ACM.  But if you don't plan to
-sell them, enjoy.
+these routines (see the ACM statement on software policy in the POD/man
+page).  Commercial incorporation of these routines into products to be
+sold requires permission and perhaps payment to the ACM.  But if you
+don't plan to sell them, enjoy.
 
 
 How to Install
@@ -66,4 +65,4 @@ Our address is:
 		       1515 Holcombe Boulevard
 			  Houston, TX 77030
 
-June 1999
+May 1999

@@ -47,8 +47,8 @@ print "random_uniform_integer..........";
 was_it_ok(3, eq5a(@result, 877502, 385465, 712626));
 
 print "random_permutation..............";
-@result = random_permutation(qw[A b C d E f G h]);
-was_it_ok(4, "@result" eq "d C f b E A G h");
+@result = random_permutation(qw[A 2 c iv E 6 g viii]);
+was_it_ok(4, "@result" eq "iv c 6 2 E A g viii");
 
 print "random_permuted_index...........";
 @result = random_permuted_index(9);

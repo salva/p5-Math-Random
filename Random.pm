@@ -572,6 +572,7 @@ I<$n>.
 Argument  restrictions: I<$low> and I<$high>  are  first rounded using
 C<int()>; the resulting I<$low> must be less than or equal to I<$high>,
 and  the  resulting  range  I<($high>S< >I<->S< >I<$low)>  must not be
+and  the  resulting  range  I<($high - $low)>  must not be
 greater than 2147483561.
 
 There are no defaults; all three arguments must be provided.
@@ -921,7 +922,7 @@ Splitting  Facilities."  ACM  Transactions   on Mathematical Software,
 This code was obtained from Netlib.
 
 Ahrens, J. H., and Dieter, U.  "Computer Methods for Sampling from the
-Exponential and Normal Distributions."  Comm. ACM, 15, 10 (Oct. 1972),
+Exponential and Normal  Distributions."  Comm. ACM, 15,10 (Oct. 1972),
 873-882.
 
 =item Gamma
@@ -929,13 +930,13 @@ Exponential and Normal Distributions."  Comm. ACM, 15, 10 (Oct. 1972),
 (Case R >= 1.0)                                          
 
 Ahrens, J. H., and Dieter, U. "Generating Gamma Variates by a Modified
-Rejection Technique."  Comm. ACM, 25, 1 (Jan. 1982), 47-54.
+Rejection Technique."  Comm. ACM, 25,1 (Jan. 1982), 47-54.
 Algorithm GD                                                       
 
 (Case 0.0 <= R <= 1.0)                                   
 
 Ahrens, J. H.,  and  Dieter, U.  "Computer Methods  for Sampling  from
-Gamma, Beta, Poisson and Binomial Distributions." Computing, 12 (1974),
+Gamma, Beta, Poisson and Binomial Distributions."  Computing, 12 (1974),
 223-246.  Adaptation of algorithm GS.
 
 =item Normal
@@ -943,7 +944,7 @@ Gamma, Beta, Poisson and Binomial Distributions." Computing, 12 (1974),
 This code was obtained from netlib.
 
 Ahrens, J. H., and  Dieter, U.   "Extensions of  Forsythe's Method for
-Random Sampling from the Normal Distribution."  Math. Comput., 27, 124
+Random Sampling  from the Normal Distribution."  Math. Comput., 27,124
 (Oct. 1973), 927-937.
 
 =item Binomial
@@ -975,7 +976,7 @@ decomposition of   the covariance matrix  in  C<SETGMN>  (used for the
 generation of multivariate normal deviates).
 
 Dongarra, J. J., Moler,   C.  B., Bunch, J.   R., and  Stewart, G.  W.
-Linpack User's Guide.  Philadelphia: SIAM Press, 1979.
+Linpack User's Guide.  SIAM Press, Philadelphia.  (1979)
 
 =item Multinomial
 
