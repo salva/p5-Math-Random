@@ -1,4 +1,5 @@
 Changes
+INSTALL
 Index
 MANIFEST
 Makefile.PL
@@ -12,4 +13,5 @@ helper.h
 linpack.c
 randlib.c
 randlib.h
-test.pl
+test1.pl
+test2.pl

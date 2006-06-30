@@ -9,7 +9,7 @@ require DynaLoader;
 require AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
-$VERSION = '0.67';
+$VERSION = '0.68';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -523,7 +523,7 @@ available as B<randlib> in B<Fortran> and B<C> source.
 =head2 Default routines:
 
 The routines which are exported by default are  the only ones that the
-average B<Perl> programmer is likely to need.
+average Perl programmer is likely to need.
 
 =over 4
 
@@ -532,7 +532,7 @@ average B<Perl> programmer is likely to need.
 Sets  the  seed   of the  base  generator  to   a  value determined by
 I<$phrase>.  The value used for a given  I<$phrase> is consistent from
 implementation to implementation  (it   does not rely on   the machine
-collating sequence).    B<Note:>  When the   B<Perl> processor   loads
+collating  sequence).    B<Note:>  When   the   Perl processor   loads
 package  B<Math::Random>  the seed  is set   to a value  based on  the
 current time.  The seed  changes  each time B<Math::Random>  generates
 something random.
@@ -1018,7 +1018,7 @@ Variate Generation.  New York: Springer-Verlag, 1986.
 
 =head1 VERSION
 
-This POD documents B<Math::Random> version 0.66.
+This POD documents B<Math::Random> version 0.68.
 
 =head1 AUTHORS
 
@@ -1054,7 +1054,7 @@ Our address is:
 
 =item *
 
-Geoffrey Rommel may be reached at grommel@cpan.org.
+Geoffrey Rommel may be reached at grommel [at] cpan [dot] org.
 
 =back
 

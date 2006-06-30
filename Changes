@@ -5,7 +5,7 @@ Revision history for Perl extension Math::Random.
 	- Cosmetic changes to bring this module into line with other
 	  Perl modules: added test.pl, Changes, MANIFEST, README;
 	  corrected some spelling, used "make dist", and so on.
-	- Geoffrey Rommel (grommel@sears.com)
+	- Geoffrey Rommel
 
 0.62  Wed Aug 22 09:30:14 2001
 	- In com.c and randlib.c, changed the Fortran-style labels
@@ -29,16 +29,18 @@ Revision history for Perl extension Math::Random.
 
 0.65  Wed May  1 08:55:30 2002
 	- Add helper.h so that XS recognizes the return value of
-	  gvprfw().  Thanks to Stephan Heuel <heuel@ipb.uni-bonn.de>
-	  for noticing and correcting this problem.
+	  gvprfw().  Thanks to Stephan Heuel for noticing and
+	  correcting this problem.
 
 0.66  Fri Jun  7 12:17:36 2002
 	- The test for random_multivariate_normal displayed an odd
 	  error message on some systems but not others.  This has
 	  been corrected.  The problem was noted by the CPAN-testers,
-	  Maynard Brandsma <BrandsmaMG@compuserve.com>, and Nat
-	  Goodman <natg@shore.net>.
+	  Maynard Brandsma, and Nat Goodman.
 
 0.67  Fri Mar 14 13:57:16 2003
 	- Corrected an interface error in getsd and phrtsd.  Noted by
-	  Eric Moore <emoore@cofs.net>.
+	  Eric Moore.
+
+0.68  Fri Jun 30 12:17:01 2006
+	- Added a new version of phrtsd and the phrtsd_orig option.

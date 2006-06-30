@@ -1548,6 +1548,9 @@ static long twop30 = 1073741824L;
 static long shift[5] = {
     1L,64L,4096L,262144L,16777216L
 };
+
+#ifdef PHRTSD_ORIG
+ /*----------------------------- Original phrtsd */
 static long i,ichr,j,lphr,values[5];
 extern long lennob(char *str);
 
@@ -1556,7 +1559,7 @@ extern long lennob(char *str);
     lphr = lennob(phrase); 
     if(lphr < 1) return;
     for(i=0; i<=(lphr-1); i++) {
-	for (ix=0; table[ix]; ix++) if (*(phrase+i) == table[ix]) break; 
+	for (ix=0; table[ix]; ix++) if (*(phrase+i) == table[ix]) break;
 	/* JJV added ix++; to bring index in line with fortran's index*/
 	ix++;
         if (!table[ix]) ix = 0;
@@ -1571,6 +1574,24 @@ extern long lennob(char *str);
             *seed2 = ( *seed2+*(shift+j-1)**(values+6-j-1) )  % twop30;
         }
     }
+#else
+ /*----------------------------- New phrtsd */
+static long i,j, ichr,lphr;
+static long values[8] = { 8521739, 5266711, 3254959, 2011673,
+  1243273, 768389, 474899, 293507 };
+extern long lennob(char *str);
+
+    *seed1 = 1234567890L;
+    *seed2 = 123456789L;
+    lphr = lennob(phrase); 
+    if(lphr < 1) return;
+    for(i=0; i<(lphr-1); i++) {
+        ichr = phrase[i];
+        j = i % 8;
+        *seed1 = ( *seed1 + (values[j] * ichr) ) % twop30;
+        *seed2 = ( *seed2 + (values[7-j] * ichr) ) % twop30;
+    }
+#endif
 }
 
 double ranf(void)

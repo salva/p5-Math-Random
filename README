@@ -46,6 +46,9 @@ The usual:
   make test
   make install
 
+Starting with version 0.68, two versions of the phrtsd routine are
+available. For details, see the INSTALL file.
+
 
 Who Deserves the Credit?  And Who Deserves the Blame?
 =====================================================
