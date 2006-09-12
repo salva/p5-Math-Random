@@ -44,3 +44,8 @@ Revision history for Perl extension Math::Random.
 
 0.68  Fri Jun 30 12:17:01 2006
 	- Added a new version of phrtsd and the phrtsd_orig option.
+
+0.69  Tue Sep 12 08:55:10 2006
+	- Changed pow to exp at randlib.c[1040] to get around a bug
+	  with gcc under AIX. (Would it also be possible to avoid
+	  this by using -lmsaa rather than -lm?)

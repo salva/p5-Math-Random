@@ -9,7 +9,7 @@ require DynaLoader;
 require AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
-$VERSION = '0.68';
+$VERSION = '0.69';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -1018,7 +1018,7 @@ Variate Generation.  New York: Springer-Verlag, 1986.
 
 =head1 VERSION
 
-This POD documents B<Math::Random> version 0.68.
+This POD documents B<Math::Random> version 0.69.
 
 =head1 AUTHORS
 

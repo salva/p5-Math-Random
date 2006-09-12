@@ -1035,7 +1035,10 @@ S140:
 /*
      INVERSE CDF LOGIC FOR MEAN LESS THAN 30
 */
-    qn = pow(q,(double)n);
+/* The following change was recommended by Paul B. to get around an
+   error when using gcc under AIX. 2006-09-12. */
+/**    qn = pow(q,(double)n); <- OLD **/
+    qn = exp( (double)n * log(q) );
     r = p/q;
     g = r*(n+1);
 S150:
