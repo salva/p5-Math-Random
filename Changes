@@ -49,3 +49,6 @@ Revision history for Perl extension Math::Random.
 	- Changed pow to exp at randlib.c[1040] to get around a bug
 	  with gcc under AIX. (Would it also be possible to avoid
 	  this by using -lmsaa rather than -lm?)
+
+0.70  Fri Oct 12 16:30:18 2007
+	- Minor corrections to POD.

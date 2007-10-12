@@ -9,7 +9,7 @@ require DynaLoader;
 require AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
-$VERSION = '0.69';
+$VERSION = '0.70';
 
 @EXPORT = qw(random_normal 
 	     random_permutation 
@@ -453,7 +453,7 @@ B<Math::Random> - Random Number Generators
 
  use Math::Random;
 
-Exports the following routines by default (see L<DEFAULT ROUTINES>):
+Exports the following routines by default (see L<"Default Routines">):
 
  random_set_seed_from_phrase
  random_get_seed
@@ -465,7 +465,7 @@ Exports the following routines by default (see L<DEFAULT ROUTINES>):
  random_permuted_index
  random_normal
 
-In this case the extended routines (see L<"EXTENDED ROUTINES">) can be
+In this case the extended routines (see L<"Extended Routines">) can be
 used by    qualifying  them  explicitly  with C<Math::Random::>,   for
 example: C<$stdexp = Math::Random::random_exponential();>
 
@@ -520,7 +520,7 @@ sufficient interest, the excluded   facilities will be included in   a
 future  release.   The code  to   perform the  excluded facilities  is
 available as B<randlib> in B<Fortran> and B<C> source.
 
-=head2 Default routines:
+=head2 Default Routines
 
 The routines which are exported by default are  the only ones that the
 average Perl programmer is likely to need.
@@ -530,9 +530,15 @@ average Perl programmer is likely to need.
 =item C<random_set_seed_from_phrase($phrase)>
 
 Sets  the  seed   of the  base  generator  to   a  value determined by
-I<$phrase>.  The value used for a given  I<$phrase> is consistent from
-implementation to implementation  (it   does not rely on   the machine
-collating  sequence).    B<Note:>  When   the   Perl processor   loads
+I<$phrase>.  If  the module is installed with  the default option, the
+value depends on the  machine collating sequence.  It should, however,
+be the  same for 7-bit ASCII character  strings on all ASCII machines.
+In the  original randlib, the value  generated for  a given I<$phrase>
+was consistent from implementation to implementation  (it did not rely
+on the machine collating sequence).  Check with your Perl
+administrator to see if the module was installed with the original
+seed generator.
+B<Note:>  When the Perl processor loads
 package  B<Math::Random>  the seed  is set   to a value  based on  the
 current time.  The seed  changes  each time B<Math::Random>  generates
 something random.
@@ -550,7 +556,7 @@ probably not useful.
 =item C<random_seed_from_phrase($phrase)>
 
 Returns   an  array of  length  two which  contains   the two integers
-consituting   the seed   (assuming a    call  in array  context).   An
+constituting   the seed  (assuming a    call  in array  context).   An
 invocation   in  a scalar  context returns  the   integer  2, which is
 probably not useful.  The  seed generated is the seed  used to set the
 seed in a  call to C<random_set_seed_from_phrase>.
@@ -642,7 +648,7 @@ Defaults are (1, 0, 1).
 
 =back
 
-=head2 Extended Routines:
+=head2 Extended Routines
 
 These routines generate deviates from many other distributions.
 
@@ -851,7 +857,7 @@ The B<Perl> code should C<croak> if bad arguments are passed or if the
 underlying B<C> code  cannot allocate the  necessary memory.  The only
 error which should kill the job without  C<croak>ing is a non-positive
 definite         variance-covariance      matrix      passed        to
-C<random_multivarite_normal> (see L<"EXTENDED ROUTINES">).
+C<random_multivarite_normal> (see L<"Extended Routines">).
 
 =head1 RANDLIB
 
@@ -884,15 +890,15 @@ web site addresses:
 
 University of Texas M. D. Anderson Cancer Center Home Page:
 
-                    http://utmdacc.mdacc.tmc.edu/
+                   http://www.mdanderson.org/
 
 Department of Biomathematics Home Page:
 
-                      http://odin.mdacc.tmc.edu/
+                   http://odin.mdacc.tmc.edu/
 
-Available Software:
+Available software:
 
-                  http://odin.mdacc.tmc.edu/anonftp/
+       http://biostatistics.mdanderson.org/SoftwareDownload/
 
 =head1 SUPPORT
 
@@ -915,17 +921,13 @@ Information on B<PROMULA.FORTRAN> can be obtained from:
 			 Columbus, Ohio 43214
 			    (614) 263-5454
 
-F<wrapper.c>  was created  by   using  B<SWIG>, and  performing   some
-modification of the result.    B<SWIG> also produced the skeleton   of
-F<Random.pm>.
+F<wrapper.c>  (now  obsolete)   was  created   by  using B<SWIG>,  and
+performing some modification of the result.  B<SWIG> also produced the
+skeleton of F<Random.pm>.
 
 Information on B<SWIG> can be obtained from:
 
-		 http://www.cs.utah.edu/~beazley/SWIG
-
-and
-
-		ftp://ftp.cs.utah.edu/pub/beazley/SWIG
+		   http://www.swig.org
 
 =head1 SOURCES
 
@@ -1018,7 +1020,7 @@ Variate Generation.  New York: Springer-Verlag, 1986.
 
 =head1 VERSION
 
-This POD documents B<Math::Random> version 0.69.
+This POD documents B<Math::Random> version 0.70.
 
 =head1 AUTHORS
 
@@ -1041,7 +1043,7 @@ Kathy Russell, and John Venier.
 Correspondence   regarding   B<Math::Random> or   B<randlib> should be
 addressed to John Venier by email to
 
-		      venier@odin.mdacc.tmc.edu
+		      jvenier@mdanderson.org
 
 =item *
 
@@ -1073,7 +1075,7 @@ and used under the same conditions as B<Perl>.
 =item *
 
 F<randlib.c>,  F<com.c>,  and F<randlib.h>   are from  B<randlib> (See
-L<"RANDLIB">) and are distributed with the following legalities:
+L<"RANDLIB">) and are distributed with the following legalities.
 
 Code that appeared  in an    ACM  publication  is subject  to    their
 algorithms policy:
@@ -1092,7 +1094,7 @@ Krogh, F.  "Algorithms Policy."  ACM  Tran.  Math.  Softw.  13 (1987),
 183-186.
 
 Note, however, that only the particular expression of an algorithm can
-be copyrighted, not the algorithm per se; see 17 USC 102.
+be copyrighted, not the algorithm per se; see 17 USC 102E<40>bE<41>.
 
 We place the Randlib code that we have written in the public domain.  
 
