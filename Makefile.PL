@@ -1,7 +1,7 @@
 use ExtUtils::MakeMaker;
 
 #--- Original or revised phrtsd?
-$OPT = shift;
+$OPT = $ARGV[0];
 if ($OPT =~ /phrtsd_orig/i) {
    warn "*"x40, "\nUsing original phrtsd\n", "*"x40, "\n";
    $def = '-DPHRTSD_ORIG';

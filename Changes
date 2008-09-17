@@ -52,3 +52,7 @@ Revision history for Perl extension Math::Random.
 
 0.70  Fri Oct 12 16:30:18 2007
 	- Minor corrections to POD.
+
+0.71  Tue Sep 16 15:38:06 2008
+	- Used $ARGV[0] rather than shift in Makefile.PL.  Thanks to John
+	  Fong for the correction.
