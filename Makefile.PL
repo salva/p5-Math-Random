@@ -29,3 +29,13 @@ sub copy {
  close I;
  close O;
 }
+
+
+sub MY::postamble {
+    return <<'MAKE_FRAG'
+
+c_api.h: c_api.decl
+	make_perl_module_c_api module_name=$(NAME) module_version=$(VERSION)
+MAKE_FRAG
+
+}

@@ -10,6 +10,7 @@ extern "C" {
 
 #include "randlib.h"
 #include "helper.h"
+#include "c_api.h"
 
 static int
 not_here(s)
@@ -35,9 +36,10 @@ not_there:
     return 0;
 }
 
-
 MODULE = Math::Random		PACKAGE = Math::Random		
 
+BOOT:
+    INIT_C_API;
 
 double
 genbet (aa,bb)
