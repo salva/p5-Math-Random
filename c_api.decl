@@ -1,4 +1,6 @@
 
+export_prefix=math_random_
+
 double genbet (double aa,double bb)
 double genchi (double df)
 double genexp (double av)
